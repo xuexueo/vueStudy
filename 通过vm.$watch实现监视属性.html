@@ -1,0 +1,43 @@
+<!-- 头文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        姓名：<input type="text" v-model="uname" /> <br />
+        年龄：<input type="number" v-model:number="age" /> <br />
+        用户信息：{{userInfo}}
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    uname: "",
+                    age: 0,
+                    userInfo: "",
+                };
+            },
+        });
+        vm.$watch("uname", {
+            immediate: true, //初始化时让handler调用一次
+            handler(newValue, oldValue) {
+                this.userInfo = newValue + "," + this.age;
+            },
+        });
+        vm.$watch("age", {
+            immediate: true,
+            handler(newValue, oldValue) {
+                this.userInfo = this.uname + "," + newValue;
+            },
+        });
+    </script>
+</body>
+
+</html>

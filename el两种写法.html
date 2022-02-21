@@ -1,0 +1,28 @@
+<!-- 头文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        el两种写法
+            (1) 创建Vue实例时候配置el属性
+            (2) 创建Vue实例后,通过vm.$mount('#app')指定
+     -->
+    <div id="app">
+        {{msg}}
+    </div>
+    <script type='text/javascript'>
+        let vm = new Vue({
+            data: {
+                msg: 'Tigger tigger V5!'
+            }
+        })
+        vm.$mount('#app')
+    </script>
+</body>

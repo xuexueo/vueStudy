@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- View 视图 -->
+    <div id="app">
+        <ul>
+            <li v-if="score>80">AAA</li>
+            <li v-else-if="score>60">BBB</li>
+            <li v-else>CCC</li>
+        </ul>
+        <ul>
+            <li v-show="score>80">AAA</li>
+        </ul>
+    </div>
+    <script type='text/javascript'>
+        // Model 模型数据
+        let modelData = {
+            score: 20
+        }
+        // ViewModel 用来建立视图与模型之前数据绑定的关系
+        new Vue({
+            el: '#app',
+            data: modelData
+        })
+    </script>
+</body>

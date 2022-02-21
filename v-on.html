@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--就是视图-->
+    <div id="app">
+        <button v-on:click="add()">新增</button>
+        <button v-on:click="update(1)">修改</button>
+    </div>
+    <script>
+        /* Model 数据*/
+        let data = {
+        };
+        /* ViewModel 来绑定 视图 和 Model 之间的关系*/
+        let app = new Vue({
+            el: '#app',
+            data: data,
+            methods: { //定义vue方法
+                add() {
+                    console.info("无参方法");
+                },
+                update(str) {
+                    console.info("有参方法，参数是：" + str);
+                }
+            }
+        });
+    </script>
+</body>

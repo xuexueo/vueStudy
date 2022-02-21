@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!-- View 视图 -->
+    <div id="app">
+        <p>姓名:{{name}}</p>
+        <p>年龄:{{age}}</p> <br>
+        <!--v-bind 放置在标签，真实属性的前方 ，使用：进行分割-->
+        来 <a v-bind:href="url" v-bind:title="title">蜗牛学苑</a> 学习 <br>
+        <!-- 简写 -->
+        <a :href="url" :title="title">蜗牛学苑</a>
+    </div>
+    <script type='text/javascript'>
+        // Model 模型数据
+        let modelData = {
+            name: '小猿',
+            age: 18,
+            url: 'http://www.woniuxy.com',
+            title: '点我点我'
+        }
+        // ViewModel 用来建立视图与模型之前数据绑定的关系
+        new Vue({
+            el: '#app',
+            data: modelData
+        })
+    </script>
+</body>
+
+</html>

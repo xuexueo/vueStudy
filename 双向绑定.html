@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Vue 视图 -->
+    <div id="app">
+        用户名: <input type="text" v-model="user.name" /> <br>
+        密码: <input type="password" v-model="user.pwd" /> <br>
+        年龄: <input type="number" v-model.number="user.age" /> <br>
+        爱好:
+        <input type="checkbox" name="hobby" v-model="user.hobby" value="swim" /> Swim
+        <input type="checkbox" name="hobby" v-model="user.hobby" value="game" /> Play Game <br>
+        性别: <input type="radio" name="sex" v-model="user.sex" value="male" /> 男
+        <input type="radio" name="sex" v-model="user.sex" value="female" /> 女<br>
+        专业:
+        <select name="subject" v-model="user.subject">
+            <option>请选择</option>
+            <option value="Java">Java</option>
+            <option value="Python">PyTHON</option>
+            <option value="大数据">大数据</option>
+        </select> <br>
+        <button @click="add">提交</button>
+    </div>
+    <script type='text/javascript'>
+        // Model 模型数据
+        let modelData = {
+            user: {
+                name: '',
+                pwd: '',
+                age: null,
+                sex: 'female',
+                hobby: ['swim'],
+                subject: '大数据'
+            }
+        }
+        /* ViewModel 来绑定 视图 和 Model 之间的关系*/
+        new Vue({
+            el: '#app',
+            data: modelData,
+            methods: {
+                add() {
+                    console.log(this.user.name);
+                    console.log(JSON.stringify(this.user));
+                }
+            },
+        })
+    </script>
+</body>

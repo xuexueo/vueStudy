@@ -1,0 +1,36 @@
+<!-- 头文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        姓名：<input type="text" v-model="uname" /> <br />
+        年龄：<input type="number" v-model:number="age" /> <br />
+        用户信息：{{userInfo}}
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    uname: "",
+                    age: 0,
+                };
+            },
+            // 计算属性：要用的属性不存在，要通过已有属性计算得来。用于简化冗余的插值表达式。
+            // 数据再次改变时会重新渲染，
+            computed: {
+                userInfo() {
+                    return this.uname + "," + this.age;
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
